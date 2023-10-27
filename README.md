@@ -5,4 +5,5 @@ nodemon -D
 mongoose
 
 # ejecutar el proyecto
-npm run start
+1-npm install
+2-npm run start

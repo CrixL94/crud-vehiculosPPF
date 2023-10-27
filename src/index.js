@@ -1,9 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 require("dotenv").config();
+const vehiculosRoutes = require("./routes/vehiculos")
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 9000;
+
+//middleware
+app.use(express.json());
+app.use('/api', vehiculosRoutes);
 
 //routes
 app.get('/', (req, res) => {
