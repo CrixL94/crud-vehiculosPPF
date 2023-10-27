@@ -15,4 +15,4 @@ const vehiculosSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Vehiculos', vehiculosSchema);;
+module.exports = mongoose.model('Vehiculos', vehiculosSchema);
