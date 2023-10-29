@@ -22,6 +22,11 @@ const entradaSalidaSchema = new mongoose.Schema({
     kilometraje: {
         type: Number,
         required: true
+    },
+    estado: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Estado', // Referencia al modelo de estados
+        required: true
     }
 });
 

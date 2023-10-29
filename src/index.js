@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 require("dotenv").config();
 const vehiculosRoutes = require("./routes/vehiculos")
 const entradasSalidasRoutes = require("./routes/entradaSalida");
+const estadosRoutes = require("./routes/estados")
 const path = require("path");
 
 //Swagger
@@ -38,6 +39,7 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use('/api', vehiculosRoutes);
 app.use('/api', entradasSalidasRoutes);
+app.use('/api', estadosRoutes);
 app.use("/api-doc", swaggerUI.serve, swaggerUI.setup(swaggerJsDoc(swaggerSpec)))
 
 //routes

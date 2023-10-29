@@ -21,21 +21,23 @@ const router = express.Router();
  *           type: string
  *         kilometraje:
  *           type: number
+ *         estado:
+ *           type: string
  *       required:
  *         - vehiculo
  *         - motorista
  *         - fecha
  *         - hora
  *         - kilometraje
+ *         - estado
  *       example:
  *         vehiculo: 653b27cfb94bc60ed0ec8c95
  *         motorista: Juan Perez
  *         fecha: 2023-10-27
  *         hora: 10:00 AM
  *         kilometraje: 1000
+ *         estado: Entrada
  */
-
-
 
 /**
  * @swagger
@@ -87,6 +89,7 @@ router.get('/get-entradas', (req, res) => {
     entradaSalida
         .find()
         .populate('vehiculo')
+        .populate('estado')
         .then(data => res.json(data))
         .catch(error => res.json({ message: error }));
 });
